@@ -998,6 +998,8 @@ CODE
 #include "imgui.h"
 #ifndef IMGUI_DISABLE
 #include "imgui_internal.h"
+#include "backends/imgui_impl_dx9.h"
+#include "backends/imgui_impl_win32.h"
 
 // System includes
 #include <stdio.h>      // vsnprintf, sscanf, printf
