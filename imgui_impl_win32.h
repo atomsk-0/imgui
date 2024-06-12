@@ -18,6 +18,7 @@
 
 #pragma once
 #include "imgui.h"      // IMGUI_IMPL_API
+#include <windows.h>
 #ifndef IMGUI_DISABLE
 
 IMGUI_IMPL_API bool     ImGui_ImplWin32_Init(void* hwnd);
@@ -25,8 +26,8 @@ IMGUI_IMPL_API bool     ImGui_ImplWin32_InitForOpenGL(void* hwnd);
 IMGUI_IMPL_API void     ImGui_ImplWin32_Shutdown();
 IMGUI_IMPL_API void     ImGui_ImplWin32_NewFrame();
 
-// Win32 message handler (using void* to avoid including windows.h)
-IMGUI_IMPL_API void* ImGui_ImplWin32_WndProcHandler(void* hwnd, void* msg, void* wParam, void* lParam); // HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam
+// Win32 message handler
+IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 // DPI-related helpers (optional)
 // - Use to enable DPI awareness without having to create an application manifest.
